@@ -86,14 +86,11 @@ namespace FileSystemScaner
                 List<DirectoryInfo> get_subdirectories = directory.GetDirectories().ToList();
                 if (get_subdirectories.Count != 0)
                 {
-                    //создадим новый список екземпляров поискового класса
                     // create new search list
                     List<Searcher> search_list = new List<Searcher>();
                     // create new thread list
                     List<Thread> thread_list = new List<Thread>();
 
-                    //для каждой папки в корневой выполним создание поискового класса и потока
-                    //для передачи ему делегата на метод поиска
                     // for each folder in the root directory. Creating a class search and thread
                     get_subdirectories.ForEach(sub_directory =>
                     {
